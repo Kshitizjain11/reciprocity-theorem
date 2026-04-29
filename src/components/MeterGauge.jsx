@@ -71,9 +71,9 @@ const MeterGauge = ({ value = 0, id = 'meter' }) => {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <canvas
         ref={canvasRef}
-        width={120}
-        height={100}
-        style={{ border: '1px solid #ddd', borderRadius: '4px' }}
+        width={80}
+        height={70}
+        style={{ borderRadius: '50%' }}
       />
     </div>
   );

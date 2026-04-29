@@ -323,6 +323,7 @@ export default function App() {
               led1Off={led1Off} setLed1Off={setLed1Off}
               led2Off={led2Off} setLed2Off={setLed2Off}
               switchEnabled={switchEnabled}
+              toggleSwitch={toggleSwitch}
             />
           </div>
 

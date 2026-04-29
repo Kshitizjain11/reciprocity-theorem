@@ -9,14 +9,15 @@ export default function CircuitDiagram(props) {
     s1, setS1, s2, setS2,
     a1, a2,
     led1Off, setLed1Off, led2Off, setLed2Off,
-    switchEnabled
+    switchEnabled,
+    toggleSwitch
   } = props;
 
   const overlayStyle = { position: 'absolute', pointerEvents: 'auto' };
 
   return (
     <div style={{ position: 'relative', width: '100%', borderRadius: 10, overflow: 'hidden', backgroundColor: '#d6e6f8' }}>
-      <img src="/reciprocity.jpg" alt="reciprocity diagram" style={{ width: '100%', height: 'auto', maxHeight: 520, objectFit: 'contain', display: 'block' }} />
+      <img src="/reciprocity.jpg" alt="reciprocity diagram" style={{ width: '100%', height: 'auto', maxHeight: '520px', objectFit: 'contain', display: 'block' }} />
 
       {/* Va-a input */}
       <div style={{ ...overlayStyle, left: '6%', top: '38%', width: 60 }}>
@@ -33,7 +34,7 @@ export default function CircuitDiagram(props) {
       {/* S1 dropdown overlay */}
       <div style={{ ...overlayStyle, left: '15%', top: '28%', width: 120 }}>
         <select value={s1} onChange={(e) => setS1(parseInt(e.target.value))} disabled={switchEnabled}
-          style={{ width: '120px', padding: '6px', borderRadius: 4, backgroundColor: '#8DD39D', border: '1px solid #8AC007', fontWeight: '700' }}>
+          style={{ width: '140px', padding: '8px', borderRadius: 4, backgroundColor: '#f9f9f9', border: '2px solid #333', color: '#333', fontWeight: '700', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
           <option value={1}>Power</option>
           <option value={2}>Short</option>
         </select>
@@ -78,7 +79,7 @@ export default function CircuitDiagram(props) {
       {/* S2 dropdown */}
       <div style={{ ...overlayStyle, left: '68%', top: '28%', width: 120 }}>
         <select value={s2} onChange={(e) => setS2(parseInt(e.target.value))} disabled={switchEnabled}
-          style={{ width: '120px', padding: '6px', borderRadius: 4, backgroundColor: '#8DD39D', border: '1px solid #8AC007', fontWeight: '700' }}>
+          style={{ width: '140px', padding: '8px', borderRadius: 4, backgroundColor: '#f9f9f9', border: '2px solid #333', color: '#333', fontWeight: '700', boxShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
           <option value={1}>Power</option>
           <option value={2}>Short</option>
         </select>
@@ -95,12 +96,12 @@ export default function CircuitDiagram(props) {
       </div>
 
       {/* Ammeter A2 (left) gauge overlay */}
-      <div style={{ ...overlayStyle, left: '38%', top: '40%', width: 140 }}>
+      <div style={{ ...overlayStyle, left: '38%', top: '40%', width: 80 }}>
         <MeterGauge value={a2} id="gauge-a2" />
       </div>
 
       {/* Ammeter A1 (right) gauge overlay */}
-      <div style={{ ...overlayStyle, left: '64%', top: '40%', width: 140 }}>
+      <div style={{ ...overlayStyle, left: '64%', top: '40%', width: 80 }}>
         <MeterGauge value={a1} id="gauge-a1" />
       </div>
 
